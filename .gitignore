@@ -2,4 +2,4 @@ package-lock.json
 node_modules
 artifacts
 cache
-typechain
+typechain-types

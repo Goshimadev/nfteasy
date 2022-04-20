@@ -11,3 +11,8 @@ git clone https://github.com/velopace/nfteasy.git
 cd nfteasy
 ```
 
+3. Install npm packages
+
+```bash
+yarn
+```
