@@ -16,3 +16,15 @@ cd nfteasy
 ```bash
 yarn
 ```
+
+4. Run a local chain and deploy your contract:
+
+localhost network
+```bash
+npx hardhat node
+npx hardhat deploy --network localhost
+```
+hardhat network
+```bash
+npx hardhat deploy
+```

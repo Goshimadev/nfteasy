@@ -2,6 +2,10 @@ import { HardhatUserConfig } from "hardhat/types";
 import "@nomiclabs/hardhat-waffle";
 import "@typechain/hardhat";
 
+// tasks
+import "./tasks/accounts";
+import "./tasks/deployment/deploy";
+
 const config: HardhatUserConfig = {
     defaultNetwork: "hardhat",
     solidity: {
