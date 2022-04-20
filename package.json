@@ -1,0 +1,13 @@
+{
+  "name": "nfteasy",
+  "version": "0.0.1",
+  "description": "Non Fungible Token contracts on Ethereum",
+  "scripts": {},
+  "keywords": [],
+  "author": "velopace",
+  "license": "MIT",
+  "devDependencies": {
+    "@openzeppelin/contracts": "^4.5.0",
+    "hardhat": "^2.9.3"
+  }
+}
