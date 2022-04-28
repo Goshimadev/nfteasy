@@ -2,7 +2,11 @@
   "name": "nfteasy",
   "version": "0.0.1",
   "description": "Non Fungible Token contracts on Ethereum",
-  "scripts": {},
+  "scripts": {
+    "accounts": "hardhat accounts",
+    "test": "hardhat test",
+    "deploy": "hardhat deploy"
+  },
   "keywords": [],
   "author": "velopace",
   "license": "MIT",
