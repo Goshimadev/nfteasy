@@ -3,6 +3,8 @@ import { SignerWithAddress } from "@nomiclabs/hardhat-ethers/signers";
 import { Babel__factory } from "../../typechain-types";
 import { TASK_DEPLOY } from "../task-names";
 
+// yarn deploy --network hardhat|localhost|rinkeby|mainnet
+// 0x5FbDB2315678afecb367f032d93F642f64180aa3 (hardhat)
 task(TASK_DEPLOY, "Deploy contract")
   .setAction(async (args, hre) => {
     let deployer: SignerWithAddress;

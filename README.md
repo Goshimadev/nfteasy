@@ -33,3 +33,8 @@ yarn deploy
 ```bash
 yarn test
 ```
+
+### Mint and Burn token
+```bash
+npx hardhat mint-token --network rinkeby|mainnet|localhost --metadata-uri ar://8_NZWr4K9d6N8k4TDbMzLAkW6cNQnSQMLeoShc8komM
+```
