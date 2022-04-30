@@ -34,7 +34,11 @@ yarn deploy
 yarn test
 ```
 
-### Mint and Burn token
+### Mint/Batch Mint and Burn token
 ```bash
 npx hardhat mint-token --network rinkeby|mainnet|localhost --metadata-uri ar://8_NZWr4K9d6N8k4TDbMzLAkW6cNQnSQMLeoShc8komM
+
+npx hardhat batchmint-token --network rinkeby|mainnet|localhost --metadata-uris ar://8_NZWr4K9d6N8k4TDbMzLAkW6cNQnSQMLeoShc8komM,ar://8_NZWr4K9d6N8k4TDbMzLAkW6cNQnSQMLeoShc8komM,ar://8_NZWr4K9d6N8k4TDbMzLAkW6cNQnSQMLeoShc8komM,ar://8_NZWr4K9d6N8k4TDbMzLAkW6cNQnSQMLeoShc8komM,ar://8_NZWr4K9d6N8k4TDbMzLAkW6cNQnSQMLeoShc8komM
+
+npx hardhat burn-token --token-id 0
 ```
