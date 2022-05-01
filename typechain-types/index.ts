@@ -36,6 +36,8 @@ export type { Babel } from "./contracts/Babel";
 export { Babel__factory } from "./factories/contracts/Babel__factory";
 export type { BabelAuthMint } from "./contracts/BabelAuthMint";
 export { BabelAuthMint__factory } from "./factories/contracts/BabelAuthMint__factory";
+export type { BabelMerkleMint } from "./contracts/BabelMerkleMint";
+export { BabelMerkleMint__factory } from "./factories/contracts/BabelMerkleMint__factory";
 export type { EIP712Base } from "./contracts/common/meta-transactions/EIP712Base";
 export { EIP712Base__factory } from "./factories/contracts/common/meta-transactions/EIP712Base__factory";
 export type { NativeMetaTransaction } from "./contracts/common/meta-transactions/NativeMetaTransaction";

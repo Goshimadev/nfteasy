@@ -5,3 +5,4 @@ export * as erc721TradableSol from "./ERC721Tradable.sol";
 export * as common from "./common";
 export { Babel__factory } from "./Babel__factory";
 export { BabelAuthMint__factory } from "./BabelAuthMint__factory";
+export { BabelMerkleMint__factory } from "./BabelMerkleMint__factory";

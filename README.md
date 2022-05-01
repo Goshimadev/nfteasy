@@ -17,6 +17,11 @@ cd nfteasy
 yarn
 ```
 
+### Compile
+```bash
+yarn build
+```
+
 ### Run a local chain and deploy your contract:
 
 localhost network
@@ -41,4 +46,9 @@ npx hardhat mint-token --network rinkeby|mainnet|localhost --metadata-uri ar://8
 npx hardhat batchmint-token --network rinkeby|mainnet|localhost --metadata-uris ar://8_NZWr4K9d6N8k4TDbMzLAkW6cNQnSQMLeoShc8komM,ar://8_NZWr4K9d6N8k4TDbMzLAkW6cNQnSQMLeoShc8komM,ar://8_NZWr4K9d6N8k4TDbMzLAkW6cNQnSQMLeoShc8komM,ar://8_NZWr4K9d6N8k4TDbMzLAkW6cNQnSQMLeoShc8komM,ar://8_NZWr4K9d6N8k4TDbMzLAkW6cNQnSQMLeoShc8komM
 
 npx hardhat burn-token --token-id 0
+```
+
+### Lint
+```bash
+yarn lint
 ```

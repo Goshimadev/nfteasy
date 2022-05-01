@@ -73,6 +73,10 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.BabelAuthMint__factory>;
     getContractFactory(
+      name: "BabelMerkleMint",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.BabelMerkleMint__factory>;
+    getContractFactory(
       name: "EIP712Base",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.EIP712Base__factory>;
@@ -164,6 +168,11 @@ declare module "hardhat/types/runtime" {
       address: string,
       signer?: ethers.Signer
     ): Promise<Contracts.BabelAuthMint>;
+    getContractAt(
+      name: "BabelMerkleMint",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.BabelMerkleMint>;
     getContractAt(
       name: "EIP712Base",
       address: string,

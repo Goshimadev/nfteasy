@@ -70,35 +70,34 @@ describe("babelAuthMint", () => {
           signer: Derek,
         },
       ]
-      describe("claiming", async () => {
-        for (let i = 0; i < members.length; i++) {
-          it("claim", async () => {
-            const sig = await Bob._signTypedData(
-              // Domain
-              {
-                name: "Babel",
-                version: "1.0.0",
-                chainId,
-                verifyingContract: babelAuthMint.address,
-              },
-              // Types
-              {
-                NFT: [
-                  { name: "tokenId", type: "uint256" },
-                  { name: "account", type: "address" },
-                ],
-              },
-              // Value
-              {
-                tokenId: members[i].tokenId,
-                account: members[i].address,
-              }
-            )
-            await babelAuthMint.connect(members[i].signer).claim(members[i].address, members[i].tokenId, sig)
-            expect(await babelAuthMint.ownerOf(members[i].tokenId)).to.equal(members[i].address)
-          })
-        }
-      })
+
+      for (let i = 0; i < members.length; i++) {
+        it("claim", async () => {
+          const sig = await Bob._signTypedData(
+            // Domain
+            {
+              name: "Babel",
+              version: "1.0.0",
+              chainId,
+              verifyingContract: babelAuthMint.address,
+            },
+            // Types
+            {
+              NFT: [
+                { name: "tokenId", type: "uint256" },
+                { name: "account", type: "address" },
+              ],
+            },
+            // Value
+            {
+              tokenId: members[i].tokenId,
+              account: members[i].address,
+            }
+          )
+          await babelAuthMint.connect(members[i].signer).claim(members[i].address, members[i].tokenId, sig)
+          expect(await babelAuthMint.ownerOf(members[i].tokenId)).to.equal(members[i].address)
+        })
+      }
     })
   })
 })
