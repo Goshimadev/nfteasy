@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Non Fungible Token contracts on Ethereum",
   "scripts": {
+    "clean": "TS_NODE_TRANSPILE_ONLY=1 hardhat clean",
     "build": "TS_NODE_TRANSPILE_ONLY=1 hardhat compile",
     "accounts": "hardhat accounts",
     "test": "hardhat test",

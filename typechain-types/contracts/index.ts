@@ -6,3 +6,4 @@ export type { erc721TradableSol };
 import type * as common from "./common";
 export type { common };
 export type { Babel } from "./Babel";
+export type { BabelAuthMint } from "./BabelAuthMint";
