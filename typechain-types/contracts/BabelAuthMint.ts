@@ -349,7 +349,7 @@ export interface BabelAuthMint extends BaseContract {
     claim(
       to: string,
       tokenId: BigNumberish,
-      proof: BytesLike,
+      signature: BytesLike,
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
 
@@ -455,7 +455,7 @@ export interface BabelAuthMint extends BaseContract {
   claim(
     to: string,
     tokenId: BigNumberish,
-    proof: BytesLike,
+    signature: BytesLike,
     overrides?: Overrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
@@ -555,7 +555,7 @@ export interface BabelAuthMint extends BaseContract {
     claim(
       to: string,
       tokenId: BigNumberish,
-      proof: BytesLike,
+      signature: BytesLike,
       overrides?: CallOverrides
     ): Promise<void>;
 
@@ -724,7 +724,7 @@ export interface BabelAuthMint extends BaseContract {
     claim(
       to: string,
       tokenId: BigNumberish,
-      proof: BytesLike,
+      signature: BytesLike,
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
 
@@ -839,7 +839,7 @@ export interface BabelAuthMint extends BaseContract {
     claim(
       to: string,
       tokenId: BigNumberish,
-      proof: BytesLike,
+      signature: BytesLike,
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<PopulatedTransaction>;
 

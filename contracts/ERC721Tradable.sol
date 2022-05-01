@@ -42,25 +42,21 @@ abstract contract ERC721Tradable is
     ) ERC721(_name, _symbol) {
         proxyRegistryAddress = _proxyRegistryAddress;
         _initializeEIP712(_name);
-    }  
+    }
 
     /**
      * @dev Safely mints a token to an address with a tokenURI.
      * @param to address of the future owner of the token
      * @param metadataURI full URI to token metadata
      */
-    function safeMint(address to, string memory metadataURI)
-        public onlyOwner
-    {
+    function safeMint(address to, string memory metadataURI) public onlyOwner {
         uint256 newTokenId = _tokenIdCounter.current();
         _safeMint(to, newTokenId);
         _setTokenURI(newTokenId, metadataURI);
         _tokenIdCounter.increment();
     }
 
-    function safeBatchMint(address to, string[] memory metadataURIs)
-        public onlyOwner
-    {
+    function safeBatchMint(address to, string[] memory metadataURIs) public onlyOwner {
         if (metadataURIs.length > 1) {
             for (uint256 i = 0; i < metadataURIs.length; i++) {
                 safeMint(to, metadataURIs[i]);
@@ -68,66 +64,41 @@ abstract contract ERC721Tradable is
         }
     }
 
-    function setTokenURI(uint256 tokenId, string memory _tokenURI)
-        public
-        onlyOwner
-    {
+    function setTokenURI(uint256 tokenId, string memory _tokenURI) public onlyOwner {
         _setTokenURI(tokenId, _tokenURI);
     }
 
-    function updateTokenURI(uint256 tokenId, string memory newTokenURI) 
-        public 
-    {
+    function updateTokenURI(uint256 tokenId, string memory newTokenURI) public {
         address holder = ERC721.ownerOf(tokenId);
-        require(
-                _msgSender() == holder,
-                "ERC721Tradable: caller is not the owner of this token"
-            );
+        require(_msgSender() == holder, "ERC721Tradable: caller is not the owner of this token");
         _setTokenURI(tokenId, newTokenURI);
         emit TokenURIUpdated(tokenId, newTokenURI);
     }
 
-    function _beforeTokenTransfer(address from, address to, uint256 tokenId)
-        internal
-        override(ERC721, ERC721Enumerable)
-    {
+    function _beforeTokenTransfer(
+        address from,
+        address to,
+        uint256 tokenId
+    ) internal override(ERC721, ERC721Enumerable) {
         super._beforeTokenTransfer(from, to, tokenId);
     }
 
-    function _burn(uint256 tokenId)
-        internal
-        override(ERC721, ERC721URIStorage)
-    {
+    function _burn(uint256 tokenId) internal override(ERC721, ERC721URIStorage) {
         super._burn(tokenId);
     }
 
-    function tokenURI(uint256 tokenId)
-        public
-        view
-        override(ERC721, ERC721URIStorage)
-        returns (string memory)
-    {
+    function tokenURI(uint256 tokenId) public view override(ERC721, ERC721URIStorage) returns (string memory) {
         return super.tokenURI(tokenId);
     }
 
-    function supportsInterface(bytes4 interfaceId)
-        public
-        view
-        override(ERC721, ERC721Enumerable)
-        returns (bool)
-    {
+    function supportsInterface(bytes4 interfaceId) public view override(ERC721, ERC721Enumerable) returns (bool) {
         return super.supportsInterface(interfaceId);
     }
 
     /**
      * Override isApprovedForAll to whitelist user's OpenSea proxy accounts to enable gas-less listings.
      */
-    function isApprovedForAll(address owner, address operator)
-        public
-        view
-        override
-        returns (bool)
-    {
+    function isApprovedForAll(address owner, address operator) public view override returns (bool) {
         // Whitelist OpenSea proxy contract for easy trading.
         ProxyRegistry proxyRegistry = ProxyRegistry(proxyRegistryAddress);
         if (address(proxyRegistry.proxies(owner)) == operator) {
@@ -140,12 +111,7 @@ abstract contract ERC721Tradable is
     /**
      * This is used instead of msg.sender as transactions won't be sent by the original token owner, but by OpenSea.
      */
-    function _msgSender()
-        internal
-        view
-        override
-        returns (address sender)
-    {
+    function _msgSender() internal view override returns (address sender) {
         return ContextMixin.msgSender();
     }
 }
