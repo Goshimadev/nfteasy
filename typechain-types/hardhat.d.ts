@@ -85,6 +85,10 @@ declare module "hardhat/types/runtime" {
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.NativeMetaTransaction__factory>;
     getContractFactory(
+      name: "ERC721LazyMint",
+      signerOrOptions?: ethers.Signer | FactoryOptions
+    ): Promise<Contracts.ERC721LazyMint__factory>;
+    getContractFactory(
       name: "ERC721Tradable",
       signerOrOptions?: ethers.Signer | FactoryOptions
     ): Promise<Contracts.ERC721Tradable__factory>;
@@ -183,6 +187,11 @@ declare module "hardhat/types/runtime" {
       address: string,
       signer?: ethers.Signer
     ): Promise<Contracts.NativeMetaTransaction>;
+    getContractAt(
+      name: "ERC721LazyMint",
+      address: string,
+      signer?: ethers.Signer
+    ): Promise<Contracts.ERC721LazyMint>;
     getContractAt(
       name: "ERC721Tradable",
       address: string,

@@ -8,3 +8,4 @@ export type { common };
 export type { Babel } from "./Babel";
 export type { BabelAuthMint } from "./BabelAuthMint";
 export type { BabelMerkleMint } from "./BabelMerkleMint";
+export type { ERC721LazyMint } from "./ERC721LazyMint";

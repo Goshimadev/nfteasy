@@ -6,3 +6,4 @@ export * as common from "./common";
 export { Babel__factory } from "./Babel__factory";
 export { BabelAuthMint__factory } from "./BabelAuthMint__factory";
 export { BabelMerkleMint__factory } from "./BabelMerkleMint__factory";
+export { ERC721LazyMint__factory } from "./ERC721LazyMint__factory";

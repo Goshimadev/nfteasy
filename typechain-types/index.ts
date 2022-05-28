@@ -42,6 +42,8 @@ export type { EIP712Base } from "./contracts/common/meta-transactions/EIP712Base
 export { EIP712Base__factory } from "./factories/contracts/common/meta-transactions/EIP712Base__factory";
 export type { NativeMetaTransaction } from "./contracts/common/meta-transactions/NativeMetaTransaction";
 export { NativeMetaTransaction__factory } from "./factories/contracts/common/meta-transactions/NativeMetaTransaction__factory";
+export type { ERC721LazyMint } from "./contracts/ERC721LazyMint";
+export { ERC721LazyMint__factory } from "./factories/contracts/ERC721LazyMint__factory";
 export type { ERC721Tradable } from "./contracts/ERC721Tradable.sol/ERC721Tradable";
 export { ERC721Tradable__factory } from "./factories/contracts/ERC721Tradable.sol/ERC721Tradable__factory";
 export type { ProxyRegistry } from "./contracts/ERC721Tradable.sol/ProxyRegistry";
